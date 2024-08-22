@@ -1,0 +1,9 @@
+a1=[1,2,4,5,7,9,12,15]
+a2=[2,3,4,6,7,10,11,12]
+a=a1+a2
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+print(a)
+print(b)
