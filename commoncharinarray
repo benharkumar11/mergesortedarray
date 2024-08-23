@@ -1,0 +1,17 @@
+func commonCharactersInArray(_ arr: [String]) -> [Character] {
+    if arr.count == 0 { return [] }
+    
+    let a = Set(arr[0])
+    
+    var com = a
+    
+    for str in arr.dropFirst() {
+        let currentStringChars = Set(str)
+        com = com.filter { currentStringChars.contains($0) }
+    }
+    
+    return Array(com)
+}
+
+
+print(commonCharactersInArray(["cool", "lock", "cook"]))  
