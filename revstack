@@ -1,0 +1,24 @@
+func revstack(_ number: Int) ->Int{
+    var stack: [Int] = []
+    var temp = number
+    
+    while temp > 0 {
+        let a = temp % 10
+        stack.append(a)
+        temp /= 10
+    }
+    
+    var rev = 0
+    var placevalue = 1
+    while !stack.isEmpty {
+        if let a = stack.popLast() {
+            rev += a * placevalue
+            placevalue *= 10
+        }
+    }
+    return rev
+}  
+
+let number = 56789
+let revnum = revstack(number)
+print(revnum)
